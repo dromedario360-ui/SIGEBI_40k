@@ -1,0 +1,90 @@
+NOMBRE: SIGEBI_DB
+
+
+CREATE TABLE "Rol" (
+    "IdRol" SERIAL PRIMARY KEY,
+    "Nombre" VARCHAR(30) NOT NULL UNIQUE,
+    "Descripcion" VARCHAR(255),
+    "Activo" BOOLEAN DEFAULT TRUE
+);
+
+CREATE TABLE "Usuario" (
+    "IdUsuario" SERIAL PRIMARY KEY,
+    "IdRol" INT NOT NULL,
+    "Nombre" VARCHAR(120) NOT NULL,
+    "Email" VARCHAR(120) UNIQUE NOT NULL,
+    "PasswordHash" VARCHAR(255) NOT NULL,
+    "Telefono" VARCHAR(20),
+    "Direccion" VARCHAR(150),
+    "Activo" BOOLEAN DEFAULT TRUE,
+    "FechaRegistro" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_usuario_rol FOREIGN KEY ("IdRol") 
+        REFERENCES "Rol"("IdRol") ON DELETE RESTRICT
+);
+
+CREATE TABLE "Categoria" (
+    "IdCategoria" SERIAL PRIMARY KEY,
+    "Nombre" VARCHAR(100) NOT NULL,
+    "Descripcion" VARCHAR(255),
+    "Activa" BOOLEAN DEFAULT TRUE
+);
+
+CREATE TABLE "RecursoBibliografico" (
+    "IdRecurso" SERIAL PRIMARY KEY,
+    "IdCategoria" INT NOT NULL,
+    "Codigo" VARCHAR(20) UNIQUE,
+    "Titulo" VARCHAR(200) NOT NULL,
+    "Autor" VARCHAR(150) NOT NULL,
+    "ISBN" VARCHAR(20),
+    "Stock" INT DEFAULT 1,
+    "Disponible" BOOLEAN DEFAULT TRUE,
+    "FechaRegistro" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_recurso_categoria FOREIGN KEY ("IdCategoria") 
+        REFERENCES "Categoria"("IdCategoria") ON DELETE RESTRICT
+);
+
+CREATE TABLE "Prestamo" (
+    "IdPrestamo" SERIAL PRIMARY KEY,
+    "IdUsuario" INT NOT NULL,
+    "FechaPrestamo" DATE NOT NULL,
+    "FechaLimite" DATE NOT NULL,
+    "Estado" VARCHAR(20) DEFAULT 'ACTIVO' 
+        CHECK ("Estado" IN ('ACTIVO', 'DEVUELTO', 'VENCIDO')),
+    "TotalMulta" DECIMAL(10,2) DEFAULT 0,
+    "FechaRegistro" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_prestamo_usuario FOREIGN KEY ("IdUsuario") 
+        REFERENCES "Usuario"("IdUsuario") ON DELETE RESTRICT
+);
+
+CREATE TABLE "DetallePrestamo" (
+    "IdDetallePrestamo" SERIAL PRIMARY KEY,
+    "IdPrestamo" INT NOT NULL,
+    "IdRecurso" INT NOT NULL,
+    "Cantidad" INT NOT NULL DEFAULT 1,
+    CONSTRAINT fk_detalle_prestamo FOREIGN KEY ("IdPrestamo") 
+        REFERENCES "Prestamo"("IdPrestamo") ON DELETE CASCADE,
+    CONSTRAINT fk_detalle_recurso FOREIGN KEY ("IdRecurso") 
+        REFERENCES "RecursoBibliografico"("IdRecurso") ON DELETE RESTRICT
+);
+
+CREATE TABLE "Penalizacion" (
+    "IdPenalizacion" SERIAL PRIMARY KEY,
+    "IdUsuario" INT NOT NULL,
+    "Motivo" VARCHAR(200) NOT NULL,
+    "Monto" DECIMAL(10,2) DEFAULT 0,
+    "FechaInicio" DATE NOT NULL,
+    "FechaFin" DATE,
+    "Activa" BOOLEAN DEFAULT TRUE,
+    CONSTRAINT fk_penalizacion_usuario FOREIGN KEY ("IdUsuario") 
+        REFERENCES "Usuario"("IdUsuario") ON DELETE CASCADE
+);
+
+CREATE TABLE "Auditoria" (
+    "IdAuditoria" SERIAL PRIMARY KEY,
+    "IdUsuario" INT,
+    "Accion" VARCHAR(150) NOT NULL,
+    "Descripcion" TEXT,
+    "Fecha" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_auditoria_usuario FOREIGN KEY ("IdUsuario") 
+        REFERENCES "Usuario"("IdUsuario") ON DELETE SET NULL
+);

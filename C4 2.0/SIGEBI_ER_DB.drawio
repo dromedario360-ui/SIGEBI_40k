@@ -1,0 +1,208 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="ER SIGEBI_DB" id="er-sigebi-db">
+    <mxGraphModel dx="1028" dy="611" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="titulo" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=18;fontStyle=1;" value="&lt;b&gt;Diagrama Entidad Relación&amp;nbsp; SIGEBI_DB&lt;/b&gt;" vertex="1">
+          <mxGeometry height="40" width="600" x="500" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rol-t" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#083F75;fontColor=#ffffff;strokeColor=#06315C;fontSize=13;fontStyle=1;align=center;" value="Rol" vertex="1">
+          <mxGeometry height="36" width="200" x="60" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rol-1" parent="1" style="text;html=1;align=left;spacingLeft=8;fontSize=11;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" value="PK   IdRol   SERIAL" vertex="1">
+          <mxGeometry height="28" width="200" x="60" y="116" as="geometry" />
+        </mxCell>
+        <mxCell id="rol-2" parent="1" style="text;html=1;align=left;spacingLeft=8;fontSize=11;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" value="Nombre   VARCHAR(30)   NOT NULL" vertex="1">
+          <mxGeometry height="28" width="200" x="60" y="144" as="geometry" />
+        </mxCell>
+        <mxCell id="rol-3" parent="1" style="text;html=1;align=left;spacingLeft=8;fontSize=11;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" value="Descripcion   VARCHAR(255)" vertex="1">
+          <mxGeometry height="28" width="200" x="60" y="172" as="geometry" />
+        </mxCell>
+        <mxCell id="rol-4" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="Activo   BOOLEAN   DEFAULT TRUE" vertex="1">
+          <mxGeometry height="28" width="200" x="60" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="usr-t" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#083F75;fontColor=#ffffff;strokeColor=#06315C;fontSize=13;fontStyle=1;align=center;" value="Usuario" vertex="1">
+          <mxGeometry height="36" width="230" x="360" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="usr-1" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="PK   IdUsuario   SERIAL" vertex="1">
+          <mxGeometry height="28" width="230" x="360" y="96" as="geometry" />
+        </mxCell>
+        <mxCell id="usr-2" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="FK   IdRol   INT   NOT NULL" vertex="1">
+          <mxGeometry height="28" width="230" x="360" y="124" as="geometry" />
+        </mxCell>
+        <mxCell id="usr-3" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="Nombre   VARCHAR(120)   NOT NULL" vertex="1">
+          <mxGeometry height="28" width="230" x="360" y="152" as="geometry" />
+        </mxCell>
+        <mxCell id="usr-4" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="Email   VARCHAR(120)   UNIQUE" vertex="1">
+          <mxGeometry height="28" width="230" x="360" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="usr-5" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="PasswordHash   VARCHAR(255)" vertex="1">
+          <mxGeometry height="28" width="230" x="360" y="208" as="geometry" />
+        </mxCell>
+        <mxCell id="usr-6" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="Telefono   VARCHAR(20)" vertex="1">
+          <mxGeometry height="28" width="230" x="360" y="236" as="geometry" />
+        </mxCell>
+        <mxCell id="usr-7" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="Direccion   VARCHAR(150)" vertex="1">
+          <mxGeometry height="28" width="230" x="360" y="264" as="geometry" />
+        </mxCell>
+        <mxCell id="usr-8" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="Activo   BOOLEAN   DEFAULT TRUE" vertex="1">
+          <mxGeometry height="28" width="230" x="360" y="292" as="geometry" />
+        </mxCell>
+        <mxCell id="usr-9" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="FechaRegistro   TIMESTAMP" vertex="1">
+          <mxGeometry height="28" width="230" x="360" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="cat-t" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#083F75;fontColor=#ffffff;strokeColor=#06315C;fontSize=13;fontStyle=1;align=center;" value="Categoria" vertex="1">
+          <mxGeometry height="36" width="220" x="720" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cat-1" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="PK   IdCategoria   SERIAL" vertex="1">
+          <mxGeometry height="28" width="220" x="720" y="96" as="geometry" />
+        </mxCell>
+        <mxCell id="cat-2" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="Nombre   VARCHAR(100)   NOT NULL" vertex="1">
+          <mxGeometry height="28" width="220" x="720" y="124" as="geometry" />
+        </mxCell>
+        <mxCell id="cat-3" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="Descripcion   VARCHAR(255)" vertex="1">
+          <mxGeometry height="28" width="220" x="720" y="152" as="geometry" />
+        </mxCell>
+        <mxCell id="cat-4" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="Activa   BOOLEAN   DEFAULT TRUE" vertex="1">
+          <mxGeometry height="28" width="220" x="720" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="rec-t" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#083F75;fontColor=#ffffff;strokeColor=#06315C;fontSize=13;fontStyle=1;align=center;" value="RecursoBibliografico" vertex="1">
+          <mxGeometry height="36" width="250" x="1060" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rec-1" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="PK   IdRecurso   SERIAL" vertex="1">
+          <mxGeometry height="28" width="250" x="1060" y="96" as="geometry" />
+        </mxCell>
+        <mxCell id="rec-2" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="FK   IdCategoria   INT   NOT NULL" vertex="1">
+          <mxGeometry height="28" width="250" x="1060" y="124" as="geometry" />
+        </mxCell>
+        <mxCell id="rec-3" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="Codigo   VARCHAR(20)   UNIQUE" vertex="1">
+          <mxGeometry height="28" width="250" x="1060" y="152" as="geometry" />
+        </mxCell>
+        <mxCell id="rec-4" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="Titulo   VARCHAR(200)   NOT NULL" vertex="1">
+          <mxGeometry height="28" width="250" x="1060" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="rec-5" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="Autor   VARCHAR(150)   NOT NULL" vertex="1">
+          <mxGeometry height="28" width="250" x="1060" y="208" as="geometry" />
+        </mxCell>
+        <mxCell id="rec-6" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="ISBN   VARCHAR(20)" vertex="1">
+          <mxGeometry height="28" width="250" x="1060" y="236" as="geometry" />
+        </mxCell>
+        <mxCell id="rec-7" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="Stock   INT   DEFAULT 1" vertex="1">
+          <mxGeometry height="28" width="250" x="1060" y="264" as="geometry" />
+        </mxCell>
+        <mxCell id="rec-8" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="Disponible   BOOLEAN   DEFAULT TRUE" vertex="1">
+          <mxGeometry height="28" width="250" x="1060" y="292" as="geometry" />
+        </mxCell>
+        <mxCell id="rec-9" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="Tipo   VARCHAR(20)" vertex="1">
+          <mxGeometry height="28" width="250" x="1060" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="rec-10" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="FechaRegistro   TIMESTAMP" vertex="1">
+          <mxGeometry height="28" width="250" x="1060" y="348" as="geometry" />
+        </mxCell>
+        <mxCell id="pre-t" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1061B0;fontColor=#ffffff;strokeColor=#0D5091;fontSize=13;fontStyle=1;align=center;" value="Prestamo" vertex="1">
+          <mxGeometry height="36" width="220" x="720" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="pre-1" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="PK   IdPrestamo   SERIAL" vertex="1">
+          <mxGeometry height="28" width="220" x="720" y="456" as="geometry" />
+        </mxCell>
+        <mxCell id="pre-2" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="FK   IdUsuario   INT   NOT NULL" vertex="1">
+          <mxGeometry height="28" width="220" x="720" y="484" as="geometry" />
+        </mxCell>
+        <mxCell id="pre-3" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="FechaPrestamo   DATE   NOT NULL" vertex="1">
+          <mxGeometry height="28" width="220" x="720" y="512" as="geometry" />
+        </mxCell>
+        <mxCell id="pre-4" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="FechaLimite   DATE   NOT NULL" vertex="1">
+          <mxGeometry height="28" width="220" x="720" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="pre-5" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="Estado   VARCHAR(20)   DEFAULT &#39;ACTIVO&#39;" vertex="1">
+          <mxGeometry height="28" width="220" x="720" y="568" as="geometry" />
+        </mxCell>
+        <mxCell id="pre-6" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="TotalMulta   DECIMAL(10,2)   DEFAULT 0" vertex="1">
+          <mxGeometry height="28" width="220" x="720" y="596" as="geometry" />
+        </mxCell>
+        <mxCell id="pre-7" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="FechaRegistro   TIMESTAMP" vertex="1">
+          <mxGeometry height="28" width="220" x="720" y="624" as="geometry" />
+        </mxCell>
+        <mxCell id="det-t" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1061B0;fontColor=#ffffff;strokeColor=#0D5091;fontSize=13;fontStyle=1;align=center;" value="DetallePrestamo" vertex="1">
+          <mxGeometry height="36" width="250" x="1060" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="det-1" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="PK   IdDetallePrestamo   SERIAL" vertex="1">
+          <mxGeometry height="28" width="250" x="1060" y="536" as="geometry" />
+        </mxCell>
+        <mxCell id="det-2" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="FK   IdPrestamo   INT   NOT NULL" vertex="1">
+          <mxGeometry height="28" width="250" x="1060" y="564" as="geometry" />
+        </mxCell>
+        <mxCell id="det-3" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="FK   IdRecurso   INT   NOT NULL" vertex="1">
+          <mxGeometry height="28" width="250" x="1060" y="592" as="geometry" />
+        </mxCell>
+        <mxCell id="det-4" parent="1" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="Cantidad   INT   DEFAULT 1" vertex="1">
+          <mxGeometry height="28" width="250" x="1060" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="pen-t" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6C6477;fontColor=#ffffff;strokeColor=#4D4D4D;fontSize=13;fontStyle=1;align=center;" value="Penalizacion" vertex="1">
+          <mxGeometry height="36" width="230" x="360" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="pen-1" parent="1" style="text;html=1;strokeColor=#3700CC;fillColor=#6a00ff;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="PK   IdPenalizacion   SERIAL" vertex="1">
+          <mxGeometry height="28" width="230" x="360" y="496" as="geometry" />
+        </mxCell>
+        <mxCell id="pen-2" parent="1" style="text;html=1;strokeColor=#3700CC;fillColor=#6a00ff;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="FK   IdUsuario   INT   NOT NULL" vertex="1">
+          <mxGeometry height="28" width="230" x="360" y="524" as="geometry" />
+        </mxCell>
+        <mxCell id="pen-3" parent="1" style="text;html=1;strokeColor=#3700CC;fillColor=#6a00ff;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="Motivo   VARCHAR(200)   NOT NULL" vertex="1">
+          <mxGeometry height="28" width="230" x="360" y="552" as="geometry" />
+        </mxCell>
+        <mxCell id="pen-4" parent="1" style="text;html=1;strokeColor=#3700CC;fillColor=#6a00ff;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="Monto   DECIMAL(10,2)   DEFAULT 0" vertex="1">
+          <mxGeometry height="28" width="230" x="360" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="pen-5" parent="1" style="text;html=1;strokeColor=#3700CC;fillColor=#6a00ff;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="FechaInicio   DATE   NOT NULL" vertex="1">
+          <mxGeometry height="28" width="230" x="360" y="608" as="geometry" />
+        </mxCell>
+        <mxCell id="pen-6" parent="1" style="text;html=1;strokeColor=#3700CC;fillColor=#6a00ff;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="FechaFin   DATE" vertex="1">
+          <mxGeometry height="28" width="230" x="360" y="636" as="geometry" />
+        </mxCell>
+        <mxCell id="pen-7" parent="1" style="text;html=1;strokeColor=#3700CC;fillColor=#6a00ff;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="Activa   BOOLEAN   DEFAULT TRUE" vertex="1">
+          <mxGeometry height="28" width="230" x="360" y="664" as="geometry" />
+        </mxCell>
+        <mxCell id="aud-t" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6C6477;fontColor=#ffffff;strokeColor=#4D4D4D;fontSize=13;fontStyle=1;align=center;" value="Auditoria" vertex="1">
+          <mxGeometry height="36" width="220" x="60" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="aud-1" parent="1" style="text;html=1;strokeColor=#3700CC;fillColor=#6a00ff;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="PK   IdAuditoria   SERIAL" vertex="1">
+          <mxGeometry height="28" width="220" x="60" y="496" as="geometry" />
+        </mxCell>
+        <mxCell id="aud-2" parent="1" style="text;html=1;strokeColor=#3700CC;fillColor=#6a00ff;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="FK   IdUsuario   INT   (nullable)" vertex="1">
+          <mxGeometry height="28" width="220" x="60" y="524" as="geometry" />
+        </mxCell>
+        <mxCell id="aud-3" parent="1" style="text;html=1;strokeColor=#3700CC;fillColor=#6a00ff;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="Accion   VARCHAR(150)   NOT NULL" vertex="1">
+          <mxGeometry height="28" width="220" x="60" y="552" as="geometry" />
+        </mxCell>
+        <mxCell id="aud-4" parent="1" style="text;html=1;strokeColor=#3700CC;fillColor=#6a00ff;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="Descripcion   TEXT" vertex="1">
+          <mxGeometry height="28" width="220" x="60" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="aud-5" parent="1" style="text;html=1;strokeColor=#3700CC;fillColor=#6a00ff;align=left;spacingLeft=8;fontSize=11;fontColor=#ffffff;" value="Fecha   TIMESTAMP   DEFAULT NOW()" vertex="1">
+          <mxGeometry height="28" width="220" x="60" y="608" as="geometry" />
+        </mxCell>
+        <mxCell id="r-rol-usr" edge="1" parent="1" source="rol-t" style="edgeStyle=entityRelationEdgeStyle;endArrow=ERmanyToOne;startArrow=ERmandOne;html=1;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" target="usr-t" value="1                                    N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r-cat-rec" edge="1" parent="1" source="cat-t" style="edgeStyle=entityRelationEdgeStyle;endArrow=ERmanyToOne;startArrow=ERmandOne;html=1;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" target="rec-t" value="1                                    N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r-usr-pre" edge="1" parent="1" source="usr-t" style="edgeStyle=entityRelationEdgeStyle;endArrow=ERmanyToOne;startArrow=ERmandOne;html=1;fontSize=11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="pre-t" value="1                         N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r-usr-pen" edge="1" parent="1" source="usr-t" style="edgeStyle=entityRelationEdgeStyle;endArrow=ERmanyToOne;startArrow=ERmandOne;html=1;fontSize=11;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.2;entryDx=0;entryDy=0;" target="pen-t" value="1           N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r-usr-aud" edge="1" parent="1" source="usr-t" style="edgeStyle=entityRelationEdgeStyle;endArrow=ERzeroToMany;startArrow=ERmandOne;html=1;fontSize=11;dashed=1;exitX=0;exitY=0.7;exitDx=0;exitDy=0;entryX=1;entryY=0.2;entryDx=0;entryDy=0;" target="aud-t" value="1           N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r-pre-det" edge="1" parent="1" source="pre-t" style="edgeStyle=entityRelationEdgeStyle;endArrow=ERmanyToOne;startArrow=ERmandOne;html=1;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" target="det-t" value="1                              N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r-rec-det" edge="1" parent="1" source="rec-t" style="edgeStyle=entityRelationEdgeStyle;endArrow=ERmanyToOne;startArrow=ERmandOne;html=1;fontSize=11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="det-t" value="1                N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

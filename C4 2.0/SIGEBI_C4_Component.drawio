@@ -1,0 +1,159 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="C4 Component" id="c4-component-sigebi">
+    <mxGraphModel dx="1028" dy="611" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="titulo" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=16;" value="&lt;b&gt;C4 Model Component Diagram&lt;/b&gt;&lt;br&gt;SIGEBI.API.Desktop Componentes internos" vertex="1">
+          <mxGeometry height="50" width="760" x="400" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl-ctrl" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;" value="Controllers" vertex="1">
+          <mxGeometry height="30" width="150" x="40" y="80" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="UsuariosController" c4Type="ASP.NET Core Controller" c4Description="GET, POST, PATCH. Gestión de usuarios del sistema." label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="ctrl-usuario">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0D5091;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="110" width="210" x="40" y="130" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="RecursosController" c4Type="ASP.NET Core Controller" c4Description="GET, POST, PUT, PATCH. Gestión de libros y revistas." label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="ctrl-recurso">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0D5091;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="110" width="210" x="270" y="130" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="PrestamosController" c4Type="ASP.NET Core Controller" c4Description="GET, POST, PATCH. Gestión de préstamos y devoluciones." label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="ctrl-prestamo">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0D5091;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="110" width="210" x="500" y="130" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="PenalizacionesController" c4Type="ASP.NET Core Controller" c4Description="GET, POST, PATCH. Gestión de penalizaciones." label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="ctrl-penal">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0D5091;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="110" width="210" x="730" y="130" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="AuditoriaController" c4Type="ASP.NET Core Controller" c4Description="GET solo Administrador. Consulta historial de auditoría." label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="ctrl-audit">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0D5091;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="110" width="210" x="960" y="130" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="lbl-app" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;" value="Application Services" vertex="1">
+          <mxGeometry height="30" width="250" x="40" y="270" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="UsuarioAppService" c4Type="Application Service" c4Description="Crear, listar, desactivar y actualizar usuarios." label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="app-usuario">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="110" width="210" x="40" y="310" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="RecursoAppService" c4Type="Application Service" c4Description="Crear libro/revista, actualizar y ajustar stock." label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="app-recurso">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="110" width="210" x="270" y="310" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="PrestamoAppService" c4Type="Application Service" c4Description="Crear préstamo, procesar devolución y marcar vencidos." label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="app-prestamo">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="110" width="210" x="500" y="310" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="PenalizacionAppService" c4Type="Application Service" c4Description="Crear y finalizar penalizaciones por usuario." label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="app-penal">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="110" width="210" x="730" y="310" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="AuditoriaAppService" c4Type="Application Service" c4Description="Consultar auditorías por fecha y por usuario." label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="app-audit">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="110" width="210" x="960" y="310" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="lbl-dom" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;" value="Domain Services" vertex="1">
+          <mxGeometry height="30" width="200" x="40" y="450" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="PrestamoDomainService" c4Type="Domain Service" c4Description="Crear préstamo, calcular multa RD$50/día, procesar devolución y marcar vencidos." label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="dom-prestamo">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#6C6477;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#4D4D4D;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="110" width="240" x="200" y="490" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="PenalizacionDomainService" c4Type="Domain Service" c4Description="Crear penalizaciones, finalizarlas y verificar si usuario está bloqueado." label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="dom-penal">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#6C6477;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#4D4D4D;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="110" width="240" x="560" y="490" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="lbl-repo" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;" value="Repositories (Infrastructure)" vertex="1">
+          <mxGeometry height="30" width="300" x="40" y="630" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="UsuarioRepository" c4Type="Repository" c4Description="Npgsql puro. CRUD de usuarios." label="&lt;font style=&quot;font-size: 13px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="repo-usuario">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#E67F08;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#BD6500;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="100" width="180" x="40" y="670" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="RecursoRepository" c4Type="Repository" c4Description="Npgsql puro. CRUD de recursos." label="&lt;font style=&quot;font-size: 13px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="repo-recurso">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#E67F08;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#BD6500;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="100" width="180" x="240" y="670" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="PrestamoRepository" c4Type="Repository" c4Description="Npgsql puro. CRUD de préstamos." label="&lt;font style=&quot;font-size: 13px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="repo-prestamo">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#E67F08;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#BD6500;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="100" width="180" x="440" y="670" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="PenalizacionRepository" c4Type="Repository" c4Description="Npgsql puro. CRUD de penalizaciones." label="&lt;font style=&quot;font-size: 13px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="repo-penal">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#E67F08;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#BD6500;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="100" width="180" x="640" y="670" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="AuditoriaRepository" c4Type="Repository" c4Description="Npgsql puro. Registro de auditoría." label="&lt;font style=&quot;font-size: 13px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="repo-audit">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#E67F08;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#BD6500;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="100" width="180" x="840" y="670" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="RolRepository" c4Type="Repository" c4Description="Npgsql puro. CRUD de roles." label="&lt;font style=&quot;font-size: 13px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="repo-rol">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#E67F08;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#BD6500;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="100" width="180" x="1040" y="670" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="PostgreSQL" c4Type="Database" c4Description="SIGEBI_DB. Todas las tablas del sistema." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="postgres">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#6C6477;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#4D4D4D;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="100" width="240" x="410" y="910" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="f1" edge="1" parent="1" source="ctrl-usuario" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" target="app-usuario">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2" edge="1" parent="1" source="ctrl-recurso" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" target="app-recurso">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f3" edge="1" parent="1" source="ctrl-prestamo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" target="app-prestamo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f4" edge="1" parent="1" source="ctrl-penal" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" target="app-penal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f5" edge="1" parent="1" source="ctrl-audit" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" target="app-audit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f6" edge="1" parent="1" source="app-prestamo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" target="dom-prestamo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f7" edge="1" parent="1" source="app-penal" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" target="dom-penal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f8" edge="1" parent="1" source="app-usuario" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" target="repo-usuario">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f9" edge="1" parent="1" source="app-recurso" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" target="repo-recurso">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f10" edge="1" parent="1" source="app-prestamo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" target="repo-prestamo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f11" edge="1" parent="1" source="app-penal" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" target="repo-penal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f12" edge="1" parent="1" source="app-audit" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" target="repo-audit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f13" edge="1" parent="1" source="repo-prestamo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" target="postgres" value="Lee/Escribe SQL">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

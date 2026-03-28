@@ -51,5 +51,10 @@ namespace SIGEBI.Domain.Entities.Recursos
             IdCategoria = idCategoria;
             ISBN = isbn?.Trim();
         }
+
+        public void EstablecerId(int id)
+        {
+            Id = id;
+        }
     }
 }

@@ -47,10 +47,10 @@ namespace SIGEBI.Infrastructure.Repositories
             await conn.OpenAsync();
             await using var cmd = new NpgsqlCommand(@"
                 INSERT INTO ""RecursoBibliografico""
-                (""IdCategoria"", ""Codigo"", ""Titulo"", ""Autor"", 
-                 ""ISBN"", ""Stock"", ""Disponible"", ""FechaRegistro"")
-                VALUES (@cat, @codigo, @titulo, @autor, 
-                        @isbn, @stock, @disponible, @fecha)", conn);
+                (""IdCategoria"", ""Codigo"", ""Titulo"", ""Autor"",
+                 ""ISBN"", ""Stock"", ""Disponible"", ""Tipo"", ""FechaRegistro"")
+                VALUES (@cat, @codigo, @titulo, @autor,
+                        @isbn, @stock, @disponible, @tipo, @fecha)", conn);
             cmd.Parameters.AddWithValue("cat", entity.IdCategoria);
             cmd.Parameters.AddWithValue("codigo", entity.Codigo);
             cmd.Parameters.AddWithValue("titulo", entity.Titulo);
@@ -58,6 +58,7 @@ namespace SIGEBI.Infrastructure.Repositories
             cmd.Parameters.AddWithValue("isbn", (object?)entity.ISBN ?? DBNull.Value);
             cmd.Parameters.AddWithValue("stock", entity.Stock);
             cmd.Parameters.AddWithValue("disponible", entity.Disponible);
+            cmd.Parameters.AddWithValue("tipo", entity.Tipo.ToString());
             cmd.Parameters.AddWithValue("fecha", entity.FechaRegistro);
             await cmd.ExecuteNonQueryAsync();
         }
@@ -135,6 +136,7 @@ namespace SIGEBI.Infrastructure.Repositories
                 ? Enum.Parse<TipoRecurso>(r["Tipo"].ToString()!)
                 : TipoRecurso.Libro;
 
+            var idRecurso = Convert.ToInt32(r["IdRecurso"]);
             var idCat = Convert.ToInt32(r["IdCategoria"]);
             var codigo = r["Codigo"].ToString()!;
             var titulo = r["Titulo"].ToString()!;
@@ -142,10 +144,15 @@ namespace SIGEBI.Infrastructure.Repositories
             var stock = Convert.ToInt32(r["Stock"]);
             var isbn = r["ISBN"] == DBNull.Value ? null : r["ISBN"].ToString();
 
-            if (tipo == TipoRecurso.Revista)
-                return Revista.Crear(idCat, codigo, titulo, autor, stock, isbn);
+            RecursoBase recurso;
 
-            return Libro.Crear(idCat, codigo, titulo, autor, stock, isbn);
+            if (tipo == TipoRecurso.Revista)
+                recurso = Revista.Crear(idCat, codigo, titulo, autor, stock, isbn);
+            else
+                recurso = Libro.Crear(idCat, codigo, titulo, autor, stock, isbn);
+
+            recurso.EstablecerId(idRecurso);
+            return recurso;
         }
     }
 }

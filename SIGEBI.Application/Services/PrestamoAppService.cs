@@ -5,11 +5,6 @@ using SIGEBI.Domain.Base;
 using SIGEBI.Domain.DomainServices;
 using SIGEBI.Domain.Entities;
 using SIGEBI.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SIGEBI.Application.Services
 {
@@ -22,11 +17,12 @@ namespace SIGEBI.Application.Services
         private readonly IAuditoriaRepository _auditoriaRepo;
         private readonly PrestamoDomainService _domainSvc;
         private readonly PenalizacionDomainService _penDomainSvc;
+        private readonly INotificacionService _notificacion;
 
         public PrestamoAppService(IPrestamoRepository prestamoRepo, IRecursoRepository recursoRepo,
                                    IPenalizacionRepository penRepo, IUsuarioRepository usuarioRepo,
                                    IAuditoriaRepository auditoriaRepo, PrestamoDomainService domainSvc,
-                                   PenalizacionDomainService penDomainSvc)
+                                   PenalizacionDomainService penDomainSvc, INotificacionService notificacion)
         {
             _prestamoRepo = prestamoRepo;
             _recursoRepo = recursoRepo;
@@ -35,6 +31,7 @@ namespace SIGEBI.Application.Services
             _auditoriaRepo = auditoriaRepo;
             _domainSvc = domainSvc;
             _penDomainSvc = penDomainSvc;
+            _notificacion = notificacion;
         }
 
         public async Task<Result<PrestamoResponse>> CrearAsync(CrearPrestamoRequest req)
@@ -65,6 +62,10 @@ namespace SIGEBI.Application.Services
 
             await _auditoriaRepo.AgregarAsync(
                 Auditoria.Crear(req.IdUsuario, "CREAR_PRESTAMO", $"Préstamo creado para usuario {req.IdUsuario}"));
+
+            var usuario = await _usuarioRepo.ObtenerPorIdAsync(req.IdUsuario);
+            if (usuario is not null)
+                await _notificacion.NotificarPrestamoCreado(usuario, prestamo);
 
             return Result<PrestamoResponse>.Success(await MapearAsync(prestamo));
         }
@@ -99,12 +100,17 @@ namespace SIGEBI.Application.Services
             var result = _domainSvc.ProcesarDevolucion(prestamo, recursos);
             if (!result.IsSuccess) return result;
 
+            var usuario = await _usuarioRepo.ObtenerPorIdAsync(prestamo.IdUsuario);
+
             if (prestamo.TotalMulta.Monto > 0)
             {
                 var pen = _penDomainSvc.CrearPenalizacion(prestamo.IdUsuario,
                     "Devolución tardía", prestamo.TotalMulta.Monto);
                 if (pen.IsSuccess)
                     await _penRepo.AgregarAsync(pen.Value!);
+
+                if (usuario is not null)
+                    await _notificacion.NotificarDevolucionConMulta(usuario, prestamo, prestamo.TotalMulta.Monto);
             }
 
             foreach (var r in recursos) await _recursoRepo.ActualizarAsync(r);
@@ -127,6 +133,10 @@ namespace SIGEBI.Application.Services
                     await _prestamoRepo.ActualizarAsync(p);
                     await _auditoriaRepo.AgregarAsync(
                         Auditoria.Crear(null, "PRESTAMO_VENCIDO", $"Préstamo {p.Id} marcado como vencido."));
+
+                    var usuario = await _usuarioRepo.ObtenerPorIdAsync(p.IdUsuario);
+                    if (usuario is not null)
+                        await _notificacion.NotificarPrestamoVencido(usuario, p);
                 }
             }
             return Result.Success();

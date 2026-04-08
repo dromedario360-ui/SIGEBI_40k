@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="SIGEBI.Desktop.Presentacion.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SIGEBI" Height="600" Width="1000"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="420"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Panel izquierdo - fondo azul con logo -->
+        <Border Grid.Column="0" Background="#083F75">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+                    <Border Width="100" Height="100" CornerRadius="50" Background="#1061B0" HorizontalAlignment="Center" Margin="0,0,0,24">
+                        <TextBlock Text="S" FontSize="48" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <TextBlock Text="SIGEBI" FontSize="42" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,8"/>
+                    <TextBlock Text="Sistema de Gestion de Biblioteca" FontSize="16" Foreground="#23A2D9" HorizontalAlignment="Center" Margin="0,0,0,32"/>
+                    <TextBlock Text="Gestion de recursos, prestamos y usuarios" FontSize="13" Foreground="#A0BCD8" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Panel derecho - formulario -->
+        <Border Grid.Column="1" Background="#F0F2F5">
+            <Grid>
+                <!-- Boton cerrar -->
+                <Button Content="X" HorizontalAlignment="Right" VerticalAlignment="Top"
+                        Width="36" Height="36" Margin="0,12,12,0"
+                        Background="Transparent" BorderThickness="0"
+                        FontSize="14" Foreground="#6C757D" Cursor="Hand"
+                        Click="BtnCerrar_Click"/>
+
+                <StackPanel VerticalAlignment="Center" Margin="48,0">
+                    <TextBlock Text="Bienvenido" FontSize="28" FontWeight="Bold" Foreground="#083F75" Margin="0,0,0,4"/>
+                    <TextBlock Text="Inicia sesion para continuar" FontSize="14" Foreground="#6C757D" Margin="0,0,0,36"/>
+                    <TextBlock Text="Correo electronico" FontSize="12" FontWeight="SemiBold" Foreground="#444" Margin="0,0,0,6"/>
+                    <TextBox x:Name="TxtEmail" Style="{StaticResource ModernTextBox}" Margin="0,0,0,20" Height="44"/>
+                    <TextBlock Text="Contrasena" FontSize="12" FontWeight="SemiBold" Foreground="#444" Margin="0,0,0,6"/>
+                    <PasswordBox x:Name="TxtPassword" Style="{StaticResource ModernPasswordBox}" Margin="0,0,0,8" Height="44"/>
+                    <TextBlock x:Name="TxtError" Foreground="#DC3545" FontSize="12" Margin="0,0,0,20" TextWrapping="Wrap" Visibility="Collapsed"/>
+                    <Button Content="Iniciar Sesion" Style="{StaticResource PrimaryButton}" Height="46" FontSize="15" Click="BtnLogin_Click" Margin="0,8,0,0"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

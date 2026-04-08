@@ -4,11 +4,7 @@ using SIGEBI.Domain.Enums;
 using SIGEBI.Domain.Interfaces;
 using SIGEBI.Domain.ValueObjects;
 using SIGEBI.Infrastructure.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
 
 namespace SIGEBI.Infrastructure.Repositories
 {
@@ -43,8 +39,8 @@ namespace SIGEBI.Infrastructure.Repositories
                 VALUES (@idUsuario, @fechaPrestamo, @fechaLimite, @estado, @multa)
                 RETURNING ""IdPrestamo""", conn);
             cmd.Parameters.AddWithValue("idUsuario", entity.IdUsuario);
-            cmd.Parameters.AddWithValue("fechaPrestamo", entity.FechaPrestamo);
-            cmd.Parameters.AddWithValue("fechaLimite", entity.FechaLimite);
+            cmd.Parameters.AddWithValue("fechaPrestamo", DateOnly.FromDateTime(entity.FechaPrestamo));
+            cmd.Parameters.AddWithValue("fechaLimite", DateOnly.FromDateTime(entity.FechaLimite));
             cmd.Parameters.AddWithValue("estado", entity.Estado.ToString());
             cmd.Parameters.AddWithValue("multa", entity.TotalMulta.Monto);
             await cmd.ExecuteNonQueryAsync();
@@ -96,7 +92,7 @@ namespace SIGEBI.Infrastructure.Repositories
             await using var cmd = new NpgsqlCommand(@"
                 SELECT * FROM ""Prestamo""
                 WHERE ""Estado"" = 'ACTIVO' AND ""FechaLimite"" < @hoy", conn);
-            cmd.Parameters.AddWithValue("hoy", DateTime.Now.Date);
+            cmd.Parameters.AddWithValue("hoy", DateOnly.FromDateTime(DateTime.Now));
             await using var reader = await cmd.ExecuteReaderAsync();
             while (await reader.ReadAsync()) lista.Add(MapearPrestamo(reader));
             return lista;
@@ -129,9 +125,13 @@ namespace SIGEBI.Infrastructure.Repositories
 
         private static Prestamo MapearPrestamo(NpgsqlDataReader r)
         {
+            var fechaLimite = r.GetFieldValue<DateOnly>("FechaLimite").ToDateTime(TimeOnly.MinValue);
+
             var prestamo = Prestamo.Crear(
                 Convert.ToInt32(r["IdUsuario"]),
-                Convert.ToDateTime(r["FechaLimite"]));
+                fechaLimite);
+
+            prestamo.EstablecerId(Convert.ToInt32(r["IdPrestamo"]));
 
             var multa = r["TotalMulta"] == DBNull.Value
                 ? 0 : Convert.ToDecimal(r["TotalMulta"]);

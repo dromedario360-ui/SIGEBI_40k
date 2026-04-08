@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page x:Class="SIGEBI.Desktop.Presentacion.Views.Auditoria.AuditoriaPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="#F0F2F5">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,16">
+            <Button Content="Actualizar" Style="{StaticResource PrimaryButton}" Click="BtnActualizar_Click"/>
+        </StackPanel>
+        <Border Grid.Row="1" CornerRadius="8" ClipToBounds="True" BorderBrush="#DEE2E6" BorderThickness="1">
+            <DataGrid x:Name="DgAuditoria">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="60"/>
+                    <DataGridTextColumn Header="Accion" Binding="{Binding Accion}" Width="180"/>
+                    <DataGridTextColumn Header="Descripcion" Binding="{Binding Descripcion}" Width="*"/>
+                    <DataGridTextColumn Header="Fecha" Binding="{Binding Fecha}" Width="150"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</Page>

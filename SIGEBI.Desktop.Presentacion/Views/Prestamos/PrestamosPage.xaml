@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page x:Class="SIGEBI.Desktop.Presentacion.Views.Prestamos.PrestamosPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="#F0F2F5">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,16">
+            <Button Content="Procesar Devolucion" Style="{StaticResource SuccessButton}" Click="BtnDevolucion_Click" Margin="0,0,8,0"/>
+            <Button Content="Marcar Vencidos" Style="{StaticResource DangerButton}" Click="BtnMarcarVencidos_Click" Margin="0,0,8,0"/>
+            <Button Content="Actualizar" Style="{StaticResource PrimaryButton}" Click="BtnActualizar_Click"/>
+        </StackPanel>
+        <Border Grid.Row="1" CornerRadius="8" ClipToBounds="True" BorderBrush="#DEE2E6" BorderThickness="1">
+            <DataGrid x:Name="DgPrestamos">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="60"/>
+                    <DataGridTextColumn Header="Usuario" Binding="{Binding NombreUsuario}" Width="*"/>
+                    <DataGridTextColumn Header="Fecha Prestamo" Binding="{Binding FechaPrestamo}" Width="130"/>
+                    <DataGridTextColumn Header="Fecha Limite" Binding="{Binding FechaLimite}" Width="120"/>
+                    <DataGridTextColumn Header="Estado" Binding="{Binding Estado}" Width="100"/>
+                    <DataGridTextColumn Header="Multa" Binding="{Binding TotalMulta}" Width="100"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</Page>

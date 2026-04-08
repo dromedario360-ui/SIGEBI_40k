@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SIGEBI.Application.Interfaces;
 using SIGEBI.Application.DTOs.Request;
+using SIGEBI.Domain.Interfaces;
 
 namespace SIGEBI.API.Web.Controllers
 {
@@ -10,36 +11,36 @@ namespace SIGEBI.API.Web.Controllers
     {
         private readonly IUsuarioAppService _svc;
         private readonly IPasswordHasher _hasher;
+        private readonly IUsuarioRepository _usuarioRepo;
 
-        public AuthController(IUsuarioAppService svc, IPasswordHasher hasher)
+        public AuthController(IUsuarioAppService svc, IPasswordHasher hasher, IUsuarioRepository usuarioRepo)
         {
             _svc = svc;
             _hasher = hasher;
+            _usuarioRepo = usuarioRepo;
         }
 
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequest req)
         {
-            var usuario = await _svc.ObtenerTodosAsync();
-            if (!usuario.IsSuccess)
-                return BadRequest("Error al obtener usuarios.");
-
-            var user = usuario.Value!
-                .FirstOrDefault(u => u.Email.ToLower() == req.Email.ToLower());
-
-            if (user is null)
+            var usuario = await _usuarioRepo.ObtenerPorEmailAsync(req.Email);
+            if (usuario is null)
                 return Unauthorized("Credenciales inválidas.");
 
-            var userCompleto = await _svc.ObtenerPorIdAsync(user.Id);
-            if (!userCompleto.IsSuccess)
+            if (!usuario.Activo)
+                return Unauthorized("Usuario inactivo.");
+
+            var passwordValido = _hasher.Verify(req.Password, usuario.PasswordHash);
+            if (!passwordValido)
                 return Unauthorized("Credenciales inválidas.");
 
             return Ok(new
             {
                 mensaje = "Login exitoso",
-                nombre = user.NombreCompleto,
-                email = user.Email,
-                rol = user.Rol
+                id = usuario.Id,
+                nombre = usuario.Nombre.NombreCompleto,
+                email = usuario.Email.ToString(),
+                rol = usuario.IdRol
             });
         }
     }

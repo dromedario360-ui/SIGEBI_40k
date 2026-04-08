@@ -2,6 +2,7 @@
   <Project Path="SIGEBI.API.Desktop/SIGEBI.API.Desktop.csproj" />
   <Project Path="SIGEBI.API.Web/SIGEBI.API.Web.csproj" />
   <Project Path="SIGEBI.Application/SIGEBI.Application.csproj" />
+  <Project Path="SIGEBI.Desktop.Presentacion/SIGEBI.Desktop.Presentacion.csproj" />
   <Project Path="SIGEBI.Domain/SIGEBI.Domain.csproj" />
   <Project Path="SIGEBI.Infrastructure/SIGEBI.Infrastructure.csproj" />
 </Solution>

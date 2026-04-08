@@ -3,11 +3,6 @@ using SIGEBI.Domain.Entities;
 using SIGEBI.Domain.Interfaces;
 using SIGEBI.Domain.ValueObjects;
 using SIGEBI.Infrastructure.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SIGEBI.Infrastructure.Repositories
 {
@@ -121,10 +116,12 @@ namespace SIGEBI.Infrastructure.Repositories
                 partes[0],
                 partes.Length > 1 ? partes[1] : ".");
             var email = new Email(r["Email"].ToString()!);
-            return Usuario.Crear(
+            var usuario = Usuario.Crear(
                 Convert.ToInt32(r["IdRol"]),
                 nombre, email,
                 r["PasswordHash"].ToString()!);
+            usuario.EstablecerId(Convert.ToInt32(r["IdUsuario"]));
+            return usuario;
         }
     }
 }

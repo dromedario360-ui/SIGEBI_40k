@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page x:Class="SIGEBI.Desktop.Presentacion.Views.Usuarios.UsuariosPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="#F0F2F5">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,16">
+            <Button Content="+ Nuevo Usuario" Style="{StaticResource PrimaryButton}" Click="BtnNuevo_Click" Margin="0,0,8,0"/>
+            <Button Content="Desactivar" Style="{StaticResource DangerButton}" Click="BtnDesactivar_Click" Margin="0,0,8,0"/>
+            <Button Content="Actualizar" Style="{StaticResource PrimaryButton}" Click="BtnActualizar_Click"/>
+        </StackPanel>
+        <Border Grid.Row="1" CornerRadius="8" ClipToBounds="True" BorderBrush="#DEE2E6" BorderThickness="1">
+            <DataGrid x:Name="DgUsuarios">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="60"/>
+                    <DataGridTextColumn Header="Nombre" Binding="{Binding NombreCompleto}" Width="*"/>
+                    <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="200"/>
+                    <DataGridTextColumn Header="Rol" Binding="{Binding Rol}" Width="120"/>
+                    <DataGridTextColumn Header="Activo" Binding="{Binding Activo}" Width="80"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</Page>

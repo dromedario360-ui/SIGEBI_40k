@@ -1,0 +1,15 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; color: #1a1a2e; }
+table { width: 100%; border-collapse: collapse; }
+th { background: #083F75; color: white; padding: 12px 16px; text-align: left; font-weight: 500; }
+td { padding: 12px 16px; border-bottom: 1px solid #e0e0e0; }
+tr:hover td { background: #f5f7ff; }
+.badge-si { background: #d4edda; color: #155724; padding: 3px 10px; border-radius: 12px; font-size: 12px; }
+.badge-no { background: #f8d7da; color: #721c24; padding: 3px 10px; border-radius: 12px; font-size: 12px; }
+.badge-activo { background: #cce5ff; color: #004085; padding: 3px 10px; border-radius: 12px; font-size: 12px; }
+.badge-devuelto { background: #d4edda; color: #155724; padding: 3px 10px; border-radius: 12px; font-size: 12px; }
+.badge-vencido { background: #f8d7da; color: #721c24; padding: 3px 10px; border-radius: 12px; font-size: 12px; }
+.card { background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 24px; margin: 24px; }
+.page-title { font-size: 22px; font-weight: 600; color: #083F75; margin-bottom: 20px; }
+.error-msg { background: #f8d7da; color: #721c24; padding: 10px 16px; border-radius: 8px; margin-bottom: 16px; }
+.empty-msg { text-align: center; padding: 40px; color: #888; font-size: 15px; }
